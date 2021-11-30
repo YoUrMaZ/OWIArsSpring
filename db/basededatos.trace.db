@@ -1,0 +1,21 @@
+2021-11-30 00:07:44 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "CATEGORIAS" no encontrada
+Table "CATEGORIAS" not found; SQL statement:
+select * from categorias [42102-200]
+2021-11-30 00:07:45 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "CATEGORIAS" no encontrada
+Table "CATEGORIAS" not found; SQL statement:
+select * from categorias [42102-200]
+2021-11-30 00:07:59 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "CATEGORIAS" no encontrada
+Table "CATEGORIAS" not found; SQL statement:
+select * from categorias
+INFORMATION_SCHEMA.CATALOGS INFORMATION_SCHEMA.CATALOGS INFORMATION_SCHEMA.CATALOGS [42102-200]
+2021-11-30 00:08:41 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT * FROM INFORMATION_SCHEMA.USERS INFORMATION_SCHEMA.[*]USERS"
+Syntax error in SQL statement "SELECT * FROM INFORMATION_SCHEMA.USERS INFORMATION_SCHEMA.[*]USERS"; SQL statement:
+SELECT * FROM INFORMATION_SCHEMA.USERS INFORMATION_SCHEMA.USERS [42000-200]
+2021-11-30 00:08:50 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT * FROM INFORMATION_SCHEMA.USERS INFORMATION_SCHEMA.[*]USERS"
+Syntax error in SQL statement "SELECT * FROM INFORMATION_SCHEMA.USERS INFORMATION_SCHEMA.[*]USERS"; SQL statement:
+SELECT * FROM INFORMATION_SCHEMA.USERS INFORMATION_SCHEMA.USERS [42000-200]
