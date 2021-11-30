@@ -14,33 +14,33 @@ import java.util.List;
 
 @Controller
 public class MainController {
-	
+
 	private static final int NUM_PRODUCTOS_ALEATORIOS = 8;
-	
+
 	@Autowired
 	private CategoriaService categoriaService;
-	
+
 	@Autowired
 	private ProductoService productoService;
-	
+
 	@GetMapping("/")
-	public String index(@RequestParam(name="idCategoria", required=false) Long idCategoria, Model model) {		
-		
+	public String index(@RequestParam(name="idCategoria", required=false) Long idCategoria, Model model) {
+
 		model.addAttribute("categorias", categoriaService.findAll());
-		
+
 		List<Producto> productos;
-		
+
 		if (idCategoria == null) {
 			productos = productoService.obtenerProductosAleatorios(NUM_PRODUCTOS_ALEATORIOS);
-		} else {			
+		} else {
 			productos = productoService.findAllByCategoria(idCategoria);
 		}
-		
+
 		model.addAttribute("productos", productos);
-		
+
 		return "index";
 	}
-	
+
 	@GetMapping("/product/{id}")
 	public String showDetails(@PathVariable("id") Long id, Model model) {
 		Producto p = productoService.findById(id);
@@ -48,12 +48,12 @@ public class MainController {
 			model.addAttribute("producto", p);
 			return "detail";
 		}
-		
+
 		return "redirect:/";
-		
+
 	}
-	
-	
-	
+
+
+
 
 }

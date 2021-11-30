@@ -6,15 +6,15 @@ import javax.persistence.Id;
 
 @Entity
 public class Categoria {
-	
+
 	@Id
 	@GeneratedValue
 	private Long id;
-	
+
 	private String nombre;
-	
+
 	private boolean destacada;
-	
+
 	private String imagen;
 
 	public Categoria() { }
@@ -56,11 +56,12 @@ public class Categoria {
 	public void setImagen(String imagen) {
 		this.imagen = imagen;
 	}
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 
 }
+

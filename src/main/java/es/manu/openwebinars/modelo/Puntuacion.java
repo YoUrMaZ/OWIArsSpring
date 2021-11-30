@@ -11,26 +11,26 @@ import org.springframework.data.annotation.CreatedDate;
 
 @Entity
 public class Puntuacion {
-	
+
 	@Id
 	@GeneratedValue
 	private Long id;
-	
+
 	@CreatedDate
 	private Date fecha;
-	
+
 	private int puntuacion;
-	
+
 	@ManyToOne
 	private Producto producto;
 
 	public Puntuacion() {
 	}
-	
+
 	public Puntuacion(int puntuacion) {
 		this.puntuacion = puntuacion;
 	}
-	
+
 	public Puntuacion(int puntuacion, Producto producto) {
 		this.puntuacion = puntuacion;
 		this.producto = producto;
@@ -68,9 +68,9 @@ public class Puntuacion {
 		this.producto = producto;
 	}
 
-	
-	
-	
-	
+
+
+
+
 
 }

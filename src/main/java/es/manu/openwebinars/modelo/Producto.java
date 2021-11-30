@@ -5,43 +5,37 @@ import org.hibernate.validator.constraints.URL;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Lob;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "producto")
 public class Producto {
-	
+
 	@Id
 	@GeneratedValue
 	private Long id;
-	
+
 	@NotEmpty
 	private String nombre;
-	
-	@Lob 
+
+	@Lob
 	private String descripcion;
-	
+
 	@Min(0)
 	private float pvp;
-	
+
 	private float descuento;
-	
+
 	@URL
 	private String imagen;
-	
+
 	@NotNull
 	@ManyToOne
 	private Categoria categoria;
-	
+
 	@OneToMany(mappedBy="producto", cascade=CascadeType.ALL, orphanRemoval=true, fetch=FetchType.EAGER)
 	private Set<Puntuacion> puntuaciones = new HashSet<Puntuacion>();
 
@@ -122,7 +116,7 @@ public class Producto {
 	public void setPuntuaciones(Set<Puntuacion> puntuaciones) {
 		this.puntuaciones = puntuaciones;
 	}
-	
+
 	/**
 	 * Métodos helper
 	 */
@@ -130,21 +124,21 @@ public class Producto {
 		this.puntuaciones.add(puntuacion);
 		puntuacion.setProducto(this);
 	}
-	
-	
+
+
 	public double getPuntuacionMedia() {
 		if (this.puntuaciones.isEmpty())
 			return 0;
-		else 
+		else
 			return this.puntuaciones.stream()
 					.mapToInt(Puntuacion::getPuntuacion)
 					.average()
 					.getAsDouble();
 	}
-	
+
 	public double getNumeroTotalPuntuaciones() {
 		return this.puntuaciones.size();
 	}
-	
+
 
 }
